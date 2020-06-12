@@ -20,7 +20,6 @@ int inpHeight = 416;       // Height of network's input image
 						   // 详细解释见
 						   // https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/output.md
 
-
 std::vector<cv::String> getOutputsNames(const cv::dnn::Net& net)
 {
 	static std::vector<cv::String> names;
@@ -119,11 +118,8 @@ void postprocess(cv::Mat& frame, std::vector<cv::Mat>& outs)
 //opencv 调用 yolov3 demo
 int yoloV3()
 {
-
 	VideoCapture cap(YOLOV3_VIDEO);
-
 	if (!cap.isOpened())return -1;
-
 
 	//coco数据集的名称文件，80类
 	string classesFile = "D:\\coco.names";
@@ -157,7 +153,6 @@ int yoloV3()
 	while (1)
 	{
 		cap >> frame;
-
 		if (frame.empty()) {
 			std::cout << "frame is empty!!!" << std::endl;
 			return -1;
